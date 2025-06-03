@@ -50,7 +50,7 @@ function concatExample(arr1, arr2) {
 }
 concatExample([1, 2, 3], [4, 5, 6]);
 
-// forEach()
+// forEach():- detailed discussed in main.js of this section.
 function forEachExample(arr) {
   console.log("Original Array:", arr);
 
