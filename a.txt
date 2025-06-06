@@ -1,0 +1,3 @@
+hi there from a.txt
+for
+week 1:- lec 06: promises
