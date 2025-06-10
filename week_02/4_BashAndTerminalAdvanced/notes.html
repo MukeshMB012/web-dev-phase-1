@@ -1,0 +1,146 @@
+<!-- Bash And Terminal Advanced   -->
+
+<!-- 1. ls command in linux:- 
+a. ls -l
+b. ls -l foolderName
+c. ls -r folderName
+d. ls -t folderName
+e. ls -lt folderName
+f. ls -l folderName/insideFolderName
+g. ls -la folderName/insideFolderName
+h. ls -lR/a folderName/insideFolderName
+i. ls -lr folderName/insideFolderName
+j. ls -lr folderName
+k. ls -s folderName
+l. ls -s folderName/insideFolderName
+(before runnig below two line of code, run this:- ls foolderName/ls folderName/insideFolderName )
+m. ls -lR | grep .json     
+n. ls -lR | grep .js    
+
+o. ls folderName*(half_name_as_you_are_searching_for_it_with_*)
+p. ls ..
+  -->
+
+
+
+<!-- DETAILS EXPLANATION BELOW:-
+1. ls -l
+What it does: Shows files in list view with extra info like size, date, and permissions.
+
+ls -l
+Think of it like "detailed mode".
+
+
+
+2. ls -l folderName
+What it does: Shows files inside a specific folder in detailed view.
+
+ls -l myFolder
+
+
+
+3. ls -r folderName
+What it does: Lists files inside the folder in reverse order.
+
+ls -r myFolder
+
+
+
+4. ls -t folderName
+What it does: Sorts files by latest modified first.
+
+ls -t myFolder
+
+
+
+5. ls -lt folderName
+What it does: Detailed list, sorted by last updated file first.
+
+ls -lt myFolder
+
+
+
+6. ls -l folder/insideFolder
+What it does: Shows detailed view of a sub-folder.
+
+ls -l myFolder/subFolder
+
+
+
+7. ls -la folder/insideFolder
+What it does: Shows all files, even hidden ones (files starting with .).
+
+ls -la myFolder/subFolder
+
+
+
+8. ls -lR folder/insideFolder
+What it does: Shows files in that folder and all sub-folders (recursive) with details.
+
+ls -lR myFolder/subFolder
+
+
+
+9. ls -lr folder/insideFolder
+What it does: Recursive + Reverse order.
+
+ls -lr myFolder/subFolder
+
+
+
+10. ls -lr folderName
+What it does: Reverse + Recursive list for a folder.
+
+ls -lr myFolder
+
+
+
+11. ls -s folderName
+What it does: Shows file sizes (in blocks).
+
+ls -s myFolder
+
+
+
+12. ls -s folder/insideFolder
+What it does: Shows sizes for files in sub-folder.
+
+ls -s myFolder/subFolder
+
+
+
+13. ls -lR | grep .json
+What it does: Finds all .json files in folder and subfolders.
+
+ls -lR | grep .json
+
+
+
+14. ls -lR | grep .js
+What it does: Finds all .js (JavaScript) files in folder and subfolders.
+
+ls -lR | grep .js
+
+
+
+15. ls folderName*
+What it does: Lists folders that start with a name.
+
+ls web*
+Useful when you're not sure of full folder name.
+
+
+
+16. ls ..
+What it does: Lists the files/folders in the parent directory (one level up).
+
+ls ..
+
+
+
+17. Bonus Tip:
+Before running commands like:
+ls -s folder/insideFolder
+
+Make sure that folder exists using:
+ls folder -->

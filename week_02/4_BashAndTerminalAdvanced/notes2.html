@@ -1,0 +1,119 @@
+<!-- Bash And Terminal Advanced -->
+
+2. cd command in linux:-
+a. cd folderName
+b. cd folderName/insideFolderName
+c. cd ..
+d. cd ../../
+
+
+3. cat command in linux
+a. cat index.html
+b. cat > newfile.txt (after runnig this you can write/edit anything in the file named newfile.txt)
+c. cat >> newfile.txt(to add any text to existing file)
+
+4. touch command in linux
+a. touch newfile.txt
+
+
+5. mkdir command in linux
+a. mkdir test && cd test (create a new folder and navigate to it)
+b. mkdir -p fronted/scripts
+c. mkdir -p fronted/css
+d. mkdir -p fronted/img
+e. mkdir -p fronted/statics
+
+
+6. mv command in linux
+a. mv main3.js runtime_main3.js(renaming file)
+b. mv runtime_main3.js  fronted/scripts(moving a file to other place)
+c. mv style.css fronted/css/mukesh.css(moving and renaming file at the same time)
+
+
+7. cp command in linux
+a. cp a.txt newFolder
+b. cp newFolder/main.js newCourse/"ha ha" (copying file from a folder to another folder)
+c. cp -r newFolder/mb "newCourse/ha ha" (copying the whole directory)
+d. cp 
+
+
+8. rm command in linux 
+a. rm newFolder/a.txt (deleting a file)
+b. rm -r newFolder/mb (deleting a whole folder)
+
+
+NOTES:- when you're working inside /mnt/c/... or any /mnt/[drive]/ path in WSL, you're on the Windows (NTFS) filesystem, and:
+        chmod and chown commands will be ignored or behave inconsistently.
+
+9. chmod command in linux
+   chmod: change file permissions, modify the read, write, and permission of a file.
+   (u=user, g=group, o=other, -= removing permission, += adding permission, r=read, w=write, x=execute, rwx=read_write_execute, -R= folder, nothing to mention for file )
+   Format:- chmod -R/nothing_for_file u/g/o +/- r/w/x andNowAddTheFile/FolderNameWhosePermissionToBeModified  (here / means either this or that)
+a. chmod u+x fileName
+b. chmod u-x fileName
+
+   modifying permission with numbers
+   (4=read, 2=write, 1=execute)
+   Format:- chmod num1num2num3 fileName
+   (here num1 is for user, num2 is for group, num3 is for other)
+   (also num1 is sum of 4,2,1 or can say sum of permission. for example:- 6=read+write, 7=read+write+excute. and vice versa for num2 and num3)
+a. chmod 664 fileName
+b. chmod 667 fileName
+c. chmod 614 fileName
+
+
+10. echo command in linux
+a. echo "hello world!"
+b. echo $PATH
+
+
+11. head and tail command in linux
+a. head newfile.txt (shows first 10 line)
+b. tail newfile.txt (shows last 10 line)
+c. head -20 newfile.txt (shows first 20 line)
+d. tail -20 newfile.txt (shows last 20 line)
+e. tail -n +25 newfile.txt | head -n 6 (tail and head combined command)
+
+
+
+12. pipe(|) command in linux
+a. tail -n +25 newfile.txt | head -n 6
+
+
+13. wc command in linux
+a. wc newfile.txt (it gives no of line, no of words, no of characters )
+
+
+14. grep command in linux
+    grep is a command that let you find the occurance of certain words or phrases or any particular expression within a set of file or directories or project.
+    grep is a command that generally is used for us to find pattern, phrases
+a. grep "2" newfile.txt  (it will shows the occurance of 2 in newfile.txt)   
+b. grep "2" newfile.txt | wc
+c. grep "2" newfile.txt | wc -l
+d. grep -c "2" newfile.txt  
+e. grep -h "2" newfile.txt 
+h. grep -hi "2" newfile.txt ( will give you the value, while ignoring cases like uppercase and lowercase)
+i. grep -hir "2" . (it gives the occurance of 2 in whole present directory)
+j. grep -hin "2" newfile.txt
+k. grep -hinw "2" newfile.txt
+l. grep -hiw "2" newfile.txt
+m. grep -o "2" newfile.txt
+n. grep -w "2" newfile.txt
+
+o. grep -v "INFO" log.txt 
+p. grep -A 5 ERROR log.txt 
+q. grep -B 5 ERROR log.txt 
+q. grep -C 5 ERROR log.txt 
+
+
+
+15. history command in linux
+    history command is used to view all the previously executed commands
+a. history
+
+
+16. sed command in linux (will do it later)
+
+
+17. awk command in linux (will do it later)
+

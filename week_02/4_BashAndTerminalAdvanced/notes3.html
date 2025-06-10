@@ -1,0 +1,219 @@
+DETAILS EXPLANATION OF NOTES2.HTML
+
+
+
+2. cd Command
+➤ Definition:
+cd (change directory) is used to navigate between directories in Linux.
+
+➤ Working Examples:
+cd folderName → Moves into the directory named folderName.
+
+cd folderName/insideFolderName → Moves into a subdirectory.
+
+cd .. → Moves one level up to the parent directory.
+
+cd ../../ → Moves two levels up.
+
+
+
+3. cat Command
+➤ Definition:
+cat (concatenate) is used to read and concatenate files. It can also be used to create and append text to files.
+
+➤ Working Examples:
+cat index.html → Displays the content of index.html.
+
+cat > newfile.txt → Creates or overwrites newfile.txt, and you can write in it directly.
+
+cat >> newfile.txt → Appends new text to newfile.txt.
+
+
+
+4. touch Command
+➤ Definition:
+touch is used to create empty files or update the timestamp of existing files.
+
+➤ Working Example:
+touch newfile.txt → Creates a new empty file newfile.txt or updates its modified time.
+
+
+
+5. mkdir Command
+➤ Definition:
+mkdir (make directory) creates new directories.
+
+➤ Working Examples:
+mkdir test && cd test → Creates test and moves into it.
+
+mkdir -p fronted/scripts → Creates fronted and its subfolder scripts.
+
+Others follow the same -p structure to create nested directories.
+
+
+
+6. mv Command
+➤ Definition:
+mv (move) moves files and directories or renames them.
+
+➤ Working Examples:
+mv main3.js runtime_main3.js → Renames the file.
+
+mv runtime_main3.js fronted/scripts → Moves file to fronted/scripts.
+
+mv style.css fronted/css/mukesh.css → Moves and renames in one step.
+
+
+
+7. cp Command
+➤ Definition:
+cp (copy) copies files and directories.
+
+➤ Working Examples:
+cp a.txt newFolder → Copies a.txt to newFolder.
+
+cp newFolder/main.js newCourse/"ha ha" → Copies file to a folder with space in name.
+
+cp -r newFolder/mb "newCourse/ha ha" → Recursively copies a folder.
+
+
+
+8. rm Command
+➤ Definition:
+rm (remove) deletes files and directories.
+
+➤ Working Examples:
+rm newFolder/a.txt → Deletes the file.
+
+rm -r newFolder/mb → Recursively deletes the folder mb.
+
+
+
+9. chmod Command
+➤ Definition:
+chmod (change mode) modifies file or directory permissions.
+
+➤ Format:
+Symbolic: chmod u+x file (adds execute to user)
+
+Numeric: chmod 764 file → User: read+write+execute, Group: read+write, Others: read
+
+➤ Working Examples:
+chmod u+x fileName → Adds execute permission for user.
+
+chmod u-x fileName → Removes execute permission for user.
+
+chmod 664 fileName → User & group: rw-, others: r--
+
+chmod 667 fileName → User & group: rw-, others: rwx
+
+chmod 614 fileName → User: rw-, group: --x, others: r--
+
+⚠ Note:
+In WSL (especially /mnt/c/), chmod often doesn't work because NTFS doesn't fully support Unix-like permissions.
+
+
+
+10. echo Command
+➤ Definition:
+echo prints text or variables to the terminal.
+
+➤ Working Examples:
+echo "hello world!" → Prints message.
+
+echo $PATH → Prints the value of the PATH environment variable.
+
+
+
+11. head and tail Commands
+➤ Definition:
+head: shows the beginning of a file.
+
+tail: shows the end of a file.
+
+➤ Working Examples:
+head newfile.txt → First 10 lines.
+
+tail newfile.txt → Last 10 lines.
+
+head -20 newfile.txt → First 20 lines.
+
+tail -20 newfile.txt → Last 20 lines.
+
+tail -n +25 newfile.txt | head -n 6 → Lines 25–30 from the file.
+
+
+
+12. | (Pipe) Command
+➤ Definition:
+Used to pass output from one command as input to another.
+
+➤ Example:
+tail -n +25 newfile.txt | head -n 6 → Combines two commands for custom line range.
+
+
+
+13. wc Command
+➤ Definition:
+wc (word count) shows number of lines, words, and characters in a file.
+
+➤ Example:
+wc newfile.txt → Displays line, word, and character count.
+
+
+
+14. grep Command
+➤ Definition:
+grep (global regular expression print) searches for text patterns.
+
+➤ Working Examples:
+grep "2" newfile.txt → Shows lines containing "2".
+
+grep "2" newfile.txt | wc → Count lines/words/chars with "2".
+
+grep "2" newfile.txt | wc -l or grep -c "2" newfile.txt → Count lines only.
+
+grep -h "2" newfile.txt → Output without file name.
+
+grep -hi "2" newfile.txt → Case-insensitive search.
+
+grep -hir "2" . → Search in all files recursively.
+
+grep -hin "2" newfile.txt → Line numbers with output.
+
+grep -hinw "2" newfile.txt → Matches exact word with line number.
+
+grep -hiw "2" newfile.txt → Case-insensitive + exact word match.
+
+grep -o "2" newfile.txt → Only matched parts shown.
+
+grep -w "2" newfile.txt → Matches whole word only.
+
+grep -v "INFO" log.txt → Lines that don’t contain "INFO".
+
+grep -A 5 ERROR log.txt → Shows 5 lines after match.
+
+grep -B 5 ERROR log.txt → Shows 5 lines before match.
+
+grep -C 5 ERROR log.txt → Shows 5 lines before & after match.
+
+
+
+15. history Command
+➤ Definition:
+Displays a list of previously executed commands in the terminal.
+
+➤ Example:
+history → Shows your terminal command history.
+
+
+
+16. sed Command
+➤ Definition:
+sed (stream editor) is used for parsing and transforming text in a file. It can perform operations like search, replace, insert, delete on file content.
+
+
+
+17. awk Command
+➤ Definition:
+awk is a programming language and command used for pattern scanning and processing. It's commonly used for filtering and reporting based on patterns in file content (especially column-wise processing).
