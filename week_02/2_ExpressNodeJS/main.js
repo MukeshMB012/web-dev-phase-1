@@ -50,7 +50,7 @@ app.post('/conversation', function(req, res){
     console.log(req.headers["authorization"])  //this will only give you the authorization number(which you passes here for this case)
     // console.log(req.body)  //:-(taking input from the users)  it won’t work as expected unless you add middleware to parse the request body.
     
-    // const message =req.query.message;  //(it allows the input from the route:- ?(now write your input))
+    // const message =req.query.message;  //(it allows the input from the route:- ?(now write your input)) and it is called query route. example:- ?n=30&a=23&c=41
     // console.log(message);
     const message =req.body.message;
     console.log(message);
