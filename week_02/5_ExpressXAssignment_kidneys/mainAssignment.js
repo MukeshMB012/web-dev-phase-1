@@ -36,7 +36,7 @@ var users = [{
     }]
 }]
 
-app.use(express.json());
+app.use(express.json()); // it is detailed discussed in week_03\1_MiddlewaresAndGlobalCatches main4.js
 
 app.get("/", function(req, res){
     // logic
