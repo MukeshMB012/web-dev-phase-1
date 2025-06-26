@@ -1,0 +1,44 @@
+<!-- Debouncing and Fetching Sum Using Backend Server -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let timeout; // this variable will hold the timeout ID
+    function debounceSum(){
+        // delay the call to sum() until i have not been called for 100ms
+        // and I've been called atleast once
+        // how do you cancel the previous call to sum()?
+        // clearTimeout() is used to cancel the previous call to sum()
+        clearTimeout(timeout);
+        timeout = setTimeout(function(){
+            sum();
+        }, 1000);
+    }
+
+    // using async await function
+    async function sum(){
+        const a= document.getElementById("firstNum").value;
+        const b= document.getElementById("secondNum").value;
+        const response = await fetch("http://localhost:3000/sum?a=" + a + "&b=" + b);
+        const ans = await response.text();
+        document.getElementById("finalSum").innerHTML = ans; // this line will update the HTML content of the div with id "finalSum"
+    }
+</script>
+<body>
+        <input oninput="debounceSum()" id="firstNum" type="text" placeholder="first number">
+        <br>
+        <br>
+        <input oninput="debounceSum()" id="secondNum" type="text" placeholder="second number">
+        <br>
+        <br>
+        <div id="finalSum"></div>
+</body>
+</html>
+
+
+<!-- Detail explanation of this code is provided at main6.html -->

@@ -1,0 +1,62 @@
+<!-- Detail explanation of main5.html -->
+
+<!-- Debouncing and Fetching Sum Using Backend Server -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Sets the character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive -->
+    <title>Debounced Sum Calculator</title> <!-- Title of the page shown in browser tab -->
+</head>
+
+<script>
+    let timeout; // Stores the timeout ID for debouncing
+
+    // Debounce function to limit how frequently 'sum()' is called
+    function debounceSum(){
+        // Clears any existing timer if the user is still typing
+        clearTimeout(timeout);
+
+        // Sets a new timer: wait 1000ms (1 second) before calling 'sum()'
+        // If the user types again before 1 second, the timer resets
+        timeout = setTimeout(function(){
+            sum(); // Calls the function to fetch and display the sum
+        }, 1000);
+    }
+
+    // Asynchronous function to fetch the sum from the backend server
+    async function sum(){
+        // Get the value entered in the first input box
+        const a = document.getElementById("firstNum").value;
+
+        // Get the value entered in the second input box
+        const b = document.getElementById("secondNum").value;
+
+        // Make a GET request to the backend server with a and b as query parameters
+        const response = await fetch("http://localhost:3000/sum?a=" + a + "&b=" + b);
+
+        // Wait for the response and read it as plain text
+        const ans = await response.text();
+
+        // Update the HTML content of the div with id "finalSum" to show the result
+        document.getElementById("finalSum").innerHTML = ans;
+    }
+</script>
+
+<body>
+    <!-- Input field for the first number -->
+    <!-- 'oninput' calls debounceSum() every time the user types something -->
+    <input oninput="debounceSum()" id="firstNum" type="text" placeholder="first number">
+    <br><br>
+
+    <!-- Input field for the second number -->
+    <!-- 'oninput' ensures any typing here also triggers debounceSum() -->
+    <input oninput="debounceSum()" id="secondNum" type="text" placeholder="second number">
+    <br><br>
+
+    <!-- Div to display the final result (sum) fetched from the backend -->
+    <div id="finalSum"></div>
+</body>
+</html>

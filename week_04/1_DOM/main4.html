@@ -1,0 +1,46 @@
+<!-- finding sum using the backend server -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // // using promise
+    // function sum(){
+    //     const a= document.getElementById("firstNum").value;
+    //     const b= document.getElementById("secondNum").value;
+    //     // later on we will use axios which is better than fetch
+    //     fetch("http://localhost:3000/sum?a=" + a + "&b=" + b)  
+    //       .then(function(response){
+    //         response.text()
+    //         .then(function(ans){
+    //             document.getElementById("finalSum").innerHTML = ans;
+    //         })
+    //       })
+    // }
+
+    // using async await function
+    async function sum(){
+        const a= document.getElementById("firstNum").value;
+        const b= document.getElementById("secondNum").value;
+        const response = await fetch("http://localhost:3000/sum?a=" + a + "&b=" + b);
+        const ans = await response.text();
+        document.getElementById("finalSum").innerHTML = ans; // this line will update the HTML content of the div with id "finalSum"
+    }
+</script>
+<body>
+        <input id="firstNum" type="text" placeholder="first number">
+        <br>
+        <br>
+        <input id="secondNum" type="text" placeholder="second number">
+        <br>
+        <br>
+        <button onclick="sum()">Calculate sum</button>
+        <br>
+        <br>
+        <div id="finalSum"></div>
+</body>
+</html>
